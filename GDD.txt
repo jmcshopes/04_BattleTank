@@ -1,0 +1,23 @@
+
+Concept
+Game in which one player controls a tank. Player can control both directional movement of tank and turret movement, with camera tied to turret and can fire. Other tank within level that can be destroyed by impacts fired by players and will fire on the player as well as moving sensibly. Variable terrain to make the level interesting. Focus on flow and feel.
+
+Rules
+
+Upper limit on speed.
+Upper limit on fire rate.
+Hits reduce health.
+Destroying other tank (0 health) results in game win, being destroyed in game loss.
+Can go anywhere in arena, surrounded by mountains.
+
+Requirements
+
+Landscape for battle
+Tank assets
+Textures
+Control scheme
+UI
+AI of some sort
+Explosion fx
+Sounds: tank movement, turret movement, engine, firing, explosion, damage.
+Music.
