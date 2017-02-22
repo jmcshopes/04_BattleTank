@@ -10,6 +10,6 @@ There's probably a few hundred different examples of the same thing on Github an
 
 ## Lecture list
 
-BT01 - Intro
-BT02 - GDD
-BT03 - Setting up GitHub
+* BT01 - Intro
+* BT02 - GDD
+* BT03 - Setting up GitHub
