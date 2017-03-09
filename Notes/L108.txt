@@ -1,0 +1,10 @@
+
+
+Static Meshes
+
+Pivot points for static meshes must be set correctly before importing (probably while creating).
+
+IMPORTANT!!
+
+Don't rename socket as soon as it's created, UE Editor will freak out!
+Use the preview static mesh to place the socket first, then clear the preview and only rename once cleared.
