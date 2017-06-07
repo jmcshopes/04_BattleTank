@@ -54,8 +54,13 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& OutHitLocation) cons
 	int32 ViewportSizeX, ViewportSizeY;
 	GetViewportSize(ViewportSizeX, ViewportSizeY);
 	auto ScreenLocation = FVector2D(ViewportSizeX * CrosshairXLocation, ViewportSizeY * CrosshairYLocation);
-	UE_LOG(LogTemp, Warning, TEXT("ScreenLocation: %s"), *ScreenLocation.ToString());
+	// UE_LOG(LogTemp, Warning, TEXT("ScreenLocation: %s"), *ScreenLocation.ToString());
 	// "De-project" the screen position of the crosshair to a world dircetions
+	FVector LookDirection;
+	if (GetLookDirection(ScreenLocation, LookDirection)) {
+		UE_LOG(LogTemp, Warning, TEXT("Look Direction: %s"), *LookDirection.ToString());
+	}
+
 	// Line-trace along that direction and see what we hit (up to max range)
 
 	// Get world location of linetrace through crosshair, true if hits landscape
@@ -66,4 +71,17 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& OutHitLocation) cons
 		// Get that object's location. Is this going to be weird if it's hitting the landscape?
 
 	return true; // TODO change this to actual return value
+}
+
+
+bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const
+{
+	// "De-project" the screen position of the crosshair to a world dircetions
+	FVector CameraWorldLocation; // for Discarding
+	return DeprojectScreenPositionToWorld(
+		ScreenLocation.X,
+		ScreenLocation.Y,
+		CameraWorldLocation,
+		LookDirection
+	);
 }
