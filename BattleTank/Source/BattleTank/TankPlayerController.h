@@ -14,7 +14,7 @@ class BATTLETANK_API ATankPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 	
-public:
+private:
 
 	ATank* GetControlledTank() const;
 	// Start the tank moving the barrel so a shot would hit where the
@@ -26,5 +26,9 @@ public:
 	
 	// Returns an OUT parameter, true if hit location
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
+	UPROPERTY(editanywhere) 
+	float CrosshairXLocation = 0.5;
+	UPROPERTY(editanywhere) 
+	float CrosshairYLocation = 0.33333;
 
 };
