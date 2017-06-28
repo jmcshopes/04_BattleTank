@@ -33,4 +33,9 @@ private:
 
 	bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
 
+	bool GetLookVectorHitLocation(FVector LookDirection, FVector& Hitlocation) const;
+	
+	UPROPERTY(editanywhere)
+	float LineTraceRange = 1000000.f;
+
 };
