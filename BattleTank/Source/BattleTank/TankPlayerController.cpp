@@ -40,7 +40,7 @@ void ATankPlayerController::AimTowardsCrosshair()
 		{ // Has "side-effect", is going to line trace
 		UE_LOG(LogTemp, Warning, TEXT("Hit Location: %s"),*OutHitLocation.ToString());
 		// If hits the landscape
-			// TODO Tell controlled tank to aim at this point
+		GetControlledTank()->AimAt(OutHitLocation);
 		}
 	}
 }
